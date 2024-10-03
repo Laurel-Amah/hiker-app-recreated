@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(255, 255, 255, 0.805);
   background-color: #131415;
 
   font-synthesis: none;
@@ -15,30 +15,69 @@
 
 .topNav {
   display: flex;
-  background-color: #323539;
+  background-color: #32353988;
   justify-content: space-between;
   padding: 10px
 }
 .section1 {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
+}
+.section1 button {
+  background-color: #ffd37d;
+  color: black;
+  border-color: transparent;
+  border-radius: 5px;
+  height: 25px;
+}
+.section1 input {
+  border-color: transparent;
+  background-color: rgb(49, 49, 49);
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  width: 110%;
+  padding-left: 10px;
 }
 .section2 {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 30px;
+}
+.section2 a {
+   text-decoration: none;
+   color: rgb(125, 122, 122);
+   font-size: smaller;
+   padding-bottom: 3px;
+}
+.section2 select{
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(125, 122, 122);
+  margin-top: 1px;
 }
 .section3 {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 10px;
 }
-
+.section3 img {
+  width: 8%;
+  border-radius: 50%;
+  border: white solid 2px;
+}
+.section3 button {
+  background-color:  rgba(71, 71, 71, 0.779);
+  border: transparent solid 1px;
+  border-radius: 5px;
+  width: 35px;
+  margin-right: 5px;
+}
 .mainContent {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 30px;
   padding: 5px;
   margin-top: 20px;
 }
@@ -56,19 +95,27 @@
 .follows {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  background-color: #323539;
+  gap: 20px;
+  background-color: #32353988;
   border-radius: 15px;
 }
+.follows .label{
+  font-weight: bold;
+  font-size:medium;
+}
+.follows .value{
+  font-weight:200;
+  font-size: x-small;
+}
 .options1{
-  background-color: #323539;
+  background-color: #32353988;
   border-radius: 15px;
   margin-top: 20px;
   padding: 5% 1% 10% 10%;
 }
 .options1 a {
   text-decoration: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.805);
   line-height: 40px;
   word-spacing: 5px;
 }
@@ -99,8 +146,144 @@ h5 {
 
 .hikes {
   display:grid;
-  grid-template-columns: 200px 200px;
+  grid-template-columns: 300px 300px;
   grid-row: auto auto;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+}
+.hike {
+  background-color: #32353988;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.hike img {
+  width: 100%;
+  height: 10%;
+  border: 1px solid transparent;
+  border-radius: 10%;
+  object-fit: cover;
+  padding-bottom: -2px;
+  z-index: 1;
+}
+.hikeImage {
+  position: relative;
+}
+.hikeDate {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: small;
+  font-weight: bold;
+  text-wrap: wrap;
+  width: 25px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+.hikeNotes {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  margin-top: -3px;
+  border-radius: 10px;
+  background: linear-gradient(to right, rgba(21, 21, 21, 0.493), rgba(55, 55, 55, 0.522));
+}
+.info {
+  text-align: center;
+}
+.label {
+  font-size: 12px;
+  color: aliceblue;
+}
+.value {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+.time {
+  font-size: small;
+  color: green;
+}
+.location {
+  font-size: small;
+  margin-top: -20px;
+}
+.join {
+  background-color: #ffd47d4c;
+  color: #ffd37d;
+  margin-left: 70px;
+  padding: 5px 20px;
+  border-color: #ffd47d4c;
+  border-style:groove;
+  border-radius: 16px;
+}
+.followStats {
+  background-color: #32353988;
+  border-radius: 15px;
+  padding: 15px;
+  align-content: center;
+}
+
+.followStats ul {
+  list-style-type: none;
+}
+.followStats button {
+  background-color: transparent;
+  color: #ffd37d;
+  margin-left: 10px;
+  padding: 5px 20px;
+  border-color:#ffd37d;
+  border-style:groove;
+  border-radius: 16px;
+}
+.followDiv {
+  display: flex;
+  justify-content: space-between;
+  line-height: 5px;
+}
+.followDiv span {
+  font-size: small;
+  font-weight: bold;
+}
+.followDiv p {
+  font-size: smaller;
+  font-weight: lighter;
+}
+.followDiv img {
+  border-radius: 50%;
+  width: 13%;
+  height: 13%;
+  border: 2px solid transparent;
+  background: linear-gradient(wheat, white) padding-box, linear-gradient(to top, rgb(206, 161, 11), red) border-box;
+}
+.viewMore {
+  color: #ffd37d;
+  background-color: none;
+  border-color: none;
+  font-size: small;
+  margin-left: 80px;
+  padding-top: 40px;
+}
+
+.news {
+  background-color: #32353988;
+  border-radius: 15px;
+  padding: 15px;
+  align-content: center;
+  margin-top: 30px;
+  font-size: small;
+  font-weight: bold;
+}
+.news img {
+  width: 100%;
+  border-radius: 15px;
+}
+.news h4 {
+  font-size: large;
+}
+
+select {
+  border-color: transparent;
 }

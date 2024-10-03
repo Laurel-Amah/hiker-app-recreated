@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import kilimanjaro from "../assets/kilimanjaro.jpg";
+import tiede from "../assets/tiede.jpg";
+import guajara from "../assets/guajara.jpg";
+import mulhacen from "../assets/mulhacen.jpg";
 
 function Hikes({ addToHike }) {
     const [sortBy, setSortBy] = useState("Recent"); // State for dropdown
     const hikes = [
-        { hikeId: 1, hikeName: "Mount Semeru", userIds: [], date: "Dec 24", distance: "106ml", elevation: "4.884m", difficulty: "Hard", location: "Lumanjang, East Java", time: "THU 07:30AM" },
-        { hikeId: 2, hikeName: "Mount Kosciuszko", userIds: [], date: "Dec 28", distance: "62ml", elevation: "2.228m", difficulty: "Medium", location: "Australia", time: "WED 10:00 AM" },
-        { hikeId: 3, hikeName: "Mount Kilimanjaro", userIds: [], date: "Jan 02", distance: "138ml", elevation: "5.895m", difficulty: "Hard", location: "Tanzania", time: "FRI 6:30 AM" },
-        { hikeId: 4, hikeName: "Mount Crab", userIds: [], date: "JAN 14", distance: "26ml", elevation: "2.063m", difficulty: "Easy", location: "Andes, Peru", time: "MON 11:20 AM" }
+        { hikeId: 1, hikeName: "Mount Semeru", userIds: [], date: "DEC 24", distance: "106ml", elevation: "4.884m", difficulty: "Hard", location: "Lumanjang, East Java", time: "THU 07:30AM", hImage: mulhacen },
+        { hikeId: 2, hikeName: "Mount Kosciuszko", userIds: [], date: "DEC 28", distance: "62ml", elevation: "2.228m", difficulty: "Medium", location: "Australia", time: "WED 10:00 AM", hImage: guajara },
+        { hikeId: 3, hikeName: "Mount Kilimanjaro", userIds: [], date: "JAN 02", distance: "138ml", elevation: "5.895m", difficulty: "Hard", location: "Tanzania", time: "FRI 6:30 AM", hImage: kilimanjaro },
+        { hikeId: 4, hikeName: "Mount Crab", userIds: [], date: "JAN 14", distance: "26ml", elevation: "2.063m", difficulty: "Easy", location: "Andes, Peru", time: "MON 11:20 AM", hImage: tiede }
     ];
 
     return (
@@ -23,19 +27,29 @@ function Hikes({ addToHike }) {
             </div>
             <div className="hikes">
                 {hikes.map((hike) => (
-                    <div className="hike" key={hike.hikeId}>
-                        <div>
-                            <span>{hike.date}</span>
-                            <img src="" alt={hike.hikeName} />
-                            <span>Distance <br /> {hike.distance}</span>
-                            <span>Elevation <br /> {hike.elevation}</span>
-                            <span>Difficulty <br /> {hike.difficulty}</span>
+                    <div className="hike" key={hike.hikeId}>                        
+                        <div className="hikeImage">
+                            <img src={hike.hImage} alt={hike.hikeName} />
+                            <div className="hikeDate">
+                                <span>{hike.date}</span>
+                            </div>
+                            <div className="hikeNotes">
+                                <div className="info">
+                                    <div className="label">Distance </div><div className="value"> {hike.distance}</div>
+                                </div>
+                                <div className="info">
+                                    <div className="label">Elevation </div><div className="value"> {hike.elevation}</div>
+                                </div>
+                                <div className="info">
+                                    <div className="label">Difficulty </div><div className="value"> {hike.difficulty}</div>
+                                </div>
+                            </div>
                         </div>
-                        <p>{hike.time}</p>
+                        <p className="time">{hike.time}</p>
                         <h4>{hike.hikeName}</h4>
-                        <p>Location . {hike.location}</p>
+                        <p className="location">Location . {hike.location}</p>
                         <img src="" alt="user Icons" />
-                        <button onClick={() => addToHike(hike.hikeId, hike.userIds)}>Join</button>
+                        <button className="join" onClick={() => addToHike(hike.hikeId, hike.userIds)}>Join</button>
                     </div>
                 ))}
             </div>

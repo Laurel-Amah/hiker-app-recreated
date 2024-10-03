@@ -4,6 +4,7 @@ import { faMessage } from "@fortawesome/free-regular-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import female from "../assets/userFemale.png";
 
 function TopNav() {
     const [input, setInput] = useState("");
@@ -45,7 +46,7 @@ function TopNav() {
                 <button>
                     <FontAwesomeIcon icon={faBell} />
                 </button>
-                <img src="" alt="User" />
+                <img src={female} alt="User" />
             </div>
         </div>
     );

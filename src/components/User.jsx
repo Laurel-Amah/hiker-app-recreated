@@ -35,9 +35,15 @@ function User({ newUser }) {
 
             {/* Follow stats */}
             <div className="follows">
-                <p>{user1.followers || 0} <br/>Followers</p>
-                <p>{user1.following || 0} <br/> Following</p>
-                <p>4.6k <br/> Event</p>
+            <div className="info">
+                <div className="label"> {user1.followers || 0} </div><div className="value"> Followers</div>
+                </div>
+                <div className="info">
+                <div className="label">{user1.following || 0} </div><div className="value"> Following </div>
+                </div>
+                <div className="info">
+                <div className="label">4.6k  </div><div className="value"> Event</div>
+                </div>
             </div>
 
             {/* Navigation options */}

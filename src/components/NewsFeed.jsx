@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import User from "./User";
+import female from "../assets/userFemale.png";
+import male from "../assets/user image.png";
+import news1 from "../assets/mulhacen.jpg";
+import news2 from "../assets/negra.jpg";
 
 function NewsFeed({ addFollowers, addFollowing}) {
     const [sortBy, setSortBy] = useState("Recent");
@@ -7,56 +10,42 @@ function NewsFeed({ addFollowers, addFollowing}) {
 
     return (
         <div>
-            <div className="follow-stats">
+            <div className="followStats">
                 <h4>Who to Follow</h4>
-                <ul>
-                    <li>
-                        <img src="" alt="User" />
-                        <span>Alexis Wells @wellsalex </span>
+                    <div className="followDiv">
+                        <img src={male} alt="User" />
+                        <span>Alexis Wells <br/> <p> @wellsalex </p> </span>
                         <button onClick={() => addFollowers(user1.userId)}>Follow</button>
-                    </li>
-                    <li>
-                        <img src="" alt="User" />
-                        <span>Scarlett Floyd @floydlett</span>
+                    </div>
+                    <br/>
+                    <div className="followDiv">
+                        <img src={female} alt="User" />
+                        <span>Scarlett Floyd <br/> <p> @floydlett </p></span>
                         <button onClick={() => addFollowing(2)}>Follow</button>
-                    </li>
-                    <li>
-                        <img src="" alt="User" />
-                        <span>John Doe @doejohn</span>
+                    </div>
+                    <br/>
+                    <div className="followDiv">
+                        <img src={male} alt="User" />
+                        <span>John Doe <br/> <p> @doejohn </p></span>
                         <button onClick={() => addFollowing(3)}>Follow</button>
-                    </li>
-                </ul>
-
-                {/* Sort by Dropdown */}
-                <span>
-                    Sort by: 
-                    <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                        <option value="Recent">Most Recent</option>
-                        <option value="Popular">Popular</option>
-                    </select>
-                </span>
+                    </div>
 
                 {/* View More Dropdown */}
-                <span className="viewMore">
-                    <select value={viewMore} onChange={(e) => setViewMore(e.target.value)}>
-                        <option value="viewMore">View More</option>
-                    </select>
-                </span>
+                <span className="viewMore">View More</span>
             </div>
 
             {/* News Section */}
             <div className="news">
-                <h6>Today's News</h6>
-                <ul className="newsList">
-                    <li>
-                        <img src="" alt="News" />
+                <h4>Today's News</h4>
+                <div className="newsList">
+                    
+                        <img src={news1} alt="News" /> <br/>
                         <span>Five Questions You Should Answer Truthfully</span>
-                    </li>
-                    <li>
-                        <img src="" alt="News" />
+                        <br/> <br/>                
+                        <img src={news2} alt="News" /><br/>
                         <span>Ten Unbelievable Facts About Mountains</span>
-                    </li>
-                </ul>
+                    
+                </div>
             </div>
         </div>
     );
